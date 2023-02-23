@@ -1,0 +1,216 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
+
+/* my work  */
+:root{
+    /* colors for fonts primary  */
+    --clrPri-softblue: hsl(215, 51%, 70%);
+    --clrpri-cyan: hsl(178, 100%, 50%);
+    --clrpri-opacitycyan: hsla(178, 100%, 50%, 0.4);
+    /* colors neutral for bgs  */
+    --clrNeu-BGDarkBlue: hsl(217, 54%, 11%);
+    --clrNeu-CardBGDarkBlue: hsl(216, 50%, 16%);
+    --clrNeu-dropshadow: hsl(215, 32%, 27%);
+    --clrNeu-white: hsl(0, 0%, 100%);
+
+    /* Font szies  */
+    --fs-Paragraph: 18px;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-600: 600;
+    --ff-font: 'Outfit', sans-serif;
+
+    --padding-L: 60px;
+    --padding-R: 20px;
+    --padding-cardedg: 20px;
+    --radius-card: 1rem;
+    --radius-img: 0.5rem;
+
+    --margin-top:20px;
+    --margin-bott:20px;
+}
+
+
+
+body{
+    color: var(--clrPri-softblue);
+    background-color: var(--clrNeu-BGDarkBlue);
+    background : linear-gradient(to right top , var(--clrNeu-CardBGDarkBlue), var(--clrNeu-BGDarkBlue) );
+    font-family: var(--ff-font);
+    font-weight: var(--fw-300);
+    font-size:var(--fs-Paragraph) ;
+    padding: var(--padding-L) var(--padding-R);
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+/* @media (maxwidth: 375px) {
+    body{
+    padding: var(--padding-L) var(--padding-R);
+    display: block;
+    }
+} */
+.container{
+    background-color: var(--clrNeu-CardBGDarkBlue);
+    border-radius: var(--radius-card);
+    max-width: 375px;
+    padding: var(--padding-cardedg);
+    box-shadow: 0px 16px 13px 4px hsl(217deg 52% 7%);
+}
+
+picture{
+    border-radius: var(--radius-img);
+    position: relative;
+    overflow: hidden;
+}
+
+picture::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--clrpri-opacitycyan);
+    background-image: url(./images/icon-view.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: none;
+}
+
+picture:hover::before{
+    display: block;
+}
+
+.header-clr {
+    color: var(--clrNeu-white);
+    
+}
+.header-font{
+    font-weight: 600;
+    font-size: 24px;
+}
+.header-style{
+    margin-top: var(--margin-bott);
+    margin-bottom: var(--margin-top);
+    cursor: pointer;
+}
+.header-style:hover{
+    color: var(--clrpri-cyan);
+}
+.paragraph{
+    margin-bottom: var(--margin-bott);
+}
+
+.flex-group{
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    margin-bottom: var(--margin-bott);
+}
+.inner-flex{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.eth{
+    color: var(--clrpri-cyan);
+    font-weight: var(--fw-600);
+}
+
+.creator img{
+    width: 35px;
+    border: 1.5px solid var(--clrNeu-white);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.creator p span {
+    color: var(--clrNeu-white);
+}
+
+.creator p span:hover {
+    color: var(--clrpri-cyan);
+    cursor: pointer;
+}
