@@ -171,6 +171,7 @@ picture:hover::before{
     margin-top: var(--margin-bott);
     margin-bottom: var(--margin-top);
     cursor: pointer;
+    display: inline-block;
 }
 .header-style:hover{
     color: var(--clrpri-cyan);
